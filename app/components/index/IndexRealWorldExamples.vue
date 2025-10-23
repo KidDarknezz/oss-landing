@@ -110,7 +110,8 @@ const selectedService = ref(services[0])
 const selectService = (service: Service) => (selectedService.value = service)
 
 const isServiceSelected = (service: string) => {
-  if (service === selectedService.value?.name) return 'service-btn-selected studio-gradient'
+  if (service === selectedService.value?.name)
+    return 'service-btn-selected bg-linear-to-r from-emerald-500 to-cyan-500'
   return 'service-btn'
 }
 </script>

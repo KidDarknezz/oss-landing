@@ -20,7 +20,7 @@
         <UButton
           color="primary"
           size="lg"
-          class="text-body mt-6 cursor-pointer bg-linear-to-r from-indigo-500 to-purple-500 px-8 font-semibold"
+          class="text-body mt-6 cursor-pointer bg-linear-to-r from-emerald-500 to-cyan-500 px-8 font-semibold"
           rounded
         >
           Start a Project
@@ -50,7 +50,7 @@
               :class="[
                 'cursor-pointer text-lg',
                 i === 0
-                  ? 'bg-linear-to-r from-indigo-500 to-purple-500 bg-clip-text font-semibold text-transparent'
+                  ? 'bg-linear-to-r from-emerald-500 to-cyan-500 bg-clip-text font-semibold text-transparent'
                   : '',
               ]"
             >
