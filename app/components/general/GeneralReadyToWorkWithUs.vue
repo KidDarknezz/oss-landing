@@ -8,7 +8,7 @@
       </div>
       <div class="w-full lg:w-3/12">
         <UButton
-          class="font-manrope w-full cursor-pointer rounded-full bg-linear-to-r from-purple-500 to-indigo-500 text-base font-bold text-white no-underline"
+          class="font-manrope w-full cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 text-base font-bold text-white no-underline"
         >
           <div class="flex w-full flex-row items-center justify-center text-center">
             <div class="mr-3">Get Started</div>
