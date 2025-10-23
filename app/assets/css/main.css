@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/*  */
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.manrope-200 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.manrope-300 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.manrope-400 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.manrope-500 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.manrope-600 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.manrope-700 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.manrope-800 {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.nav-content {
+  padding: 15px 25px;
+}
+
+.studio-gradient {
+  background: #70c48f;
+  background: linear-gradient(
+    90deg,
+    rgba(112, 196, 143, 1) 0%,
+    rgba(91, 195, 161, 1) 35%,
+    rgba(39, 194, 208, 1) 70%,
+    rgba(0, 194, 243, 1) 100%
+  );
+}
+
+.studio-gray-gradient {
+  background: #232323;
+  background: linear-gradient(
+    180deg,
+    rgba(35, 35, 35, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.studio-gradient-text {
+  background: linear-gradient(to right, #70c48f, #5bc3a1, #27c2d0, #00c2f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
