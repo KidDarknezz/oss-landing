@@ -25,7 +25,12 @@
       <!-- /BTNS SELECT -->
 
       <!-- /CAROUSEL -->
-      <UCarousel v-slot="{ item }" :items="selectedService?.projects" :ui="{ item: 'basis-[31%]' }">
+      <UCarousel
+        v-slot="{ item }"
+        :items="selectedService?.projects"
+        :ui="{ item: 'basis-[31%]' }"
+        :align="'start'"
+      >
         <div class="service-tile cursor-pointer" :style="{ backgroundImage: `url(${item.img})` }" />
       </UCarousel>
       <!-- /CAROUSEL -->

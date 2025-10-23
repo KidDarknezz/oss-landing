@@ -4,4 +4,5 @@
   <IndexRealWorldExamples />
   <IndexPoweredByAgile />
   <IndexToolsWeMaster />
+  <IndexClientsQuotes />
 </template>
