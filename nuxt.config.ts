@@ -4,10 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/image', '@nuxt/ui'],
   css: ['~/assets/css/main.css'],
-  nitro: {
-    preset: 'firebase',
-    firebase: {
-      gen: 2,
-    },
-  },
+  // nitro: {
+  //   preset: 'firebase',
+  //   firebase: {
+  //     gen: 2,
+  //   },
+  // },
 })
