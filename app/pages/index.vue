@@ -6,5 +6,4 @@
   <IndexToolsWeMaster />
   <IndexClientsQuotes />
   <IndexReadyWorkWithUs />
-  <GeneralFooter />
 </template>

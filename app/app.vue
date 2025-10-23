@@ -1,6 +1,7 @@
 <template>
   <NuxtRouteAnnouncer />
   <NuxtPage />
+  <GeneralFooter />
 </template>
 
 <script setup>
