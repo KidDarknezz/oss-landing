@@ -1,7 +1,7 @@
 import { defineConfig } from 'tailwindcss'
 
 export default defineConfig({
-  darkMode: true,
+  darkMode: false,
   theme: {
     extend: {},
   },
