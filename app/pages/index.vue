@@ -5,4 +5,5 @@
   <IndexPoweredByAgile />
   <IndexToolsWeMaster />
   <IndexClientsQuotes />
+  <IndexReadyWorkWithUs />
 </template>

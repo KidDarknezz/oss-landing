@@ -31,7 +31,7 @@
             <UButton
               color="neutral"
               variant="outline"
-              icon="i-heroicons-arrow-left"
+              icon="i-lucide-arrow-left"
               class="mr-7 cursor-pointer rounded-full px-6"
               @click="prevSlide"
             />
@@ -40,7 +40,7 @@
             </span>
             <UButton
               color="neutral"
-              icon="i-heroicons-arrow-right"
+              icon="i-lucide-arrow-right"
               class="ml-7 cursor-pointer rounded-full px-6"
               @click="nextSlide"
             />
