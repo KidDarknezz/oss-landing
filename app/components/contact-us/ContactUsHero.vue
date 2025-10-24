@@ -33,12 +33,15 @@
           </div>
           <div class="mb-3 grid grid-cols-12 gap-4">
             <div
-              class="col-span-4 cursor-pointer rounded-lg bg-linear-to-r from-[#70C48F] to-[#00C2F3] p-[2px] text-center"
+              class="col-span-6 flex h-full w-full cursor-pointer rounded-lg bg-linear-to-r from-[#70C48F] to-[#00C2F3] p-0.5 text-center sm:col-span-6 lg:col-span-4"
               v-for="service in services"
               :key="service"
               @click="selectService(service)"
             >
-              <div class="rounded-lg p-3" :class="isServiceSelected(service) ? '' : 'bg-black'">
+              <div
+                class="w-full rounded-lg p-3"
+                :class="isServiceSelected(service) ? '' : 'bg-black'"
+              >
                 {{ service }}
               </div>
             </div>
