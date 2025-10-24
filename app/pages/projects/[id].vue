@@ -39,7 +39,7 @@
 
 <script lang="ts" setup>
 const route = useRoute()
-const projects = ProjectsComp()
+const services = ProjectsComp()
 
 const viewProject = ref()
 
@@ -48,10 +48,10 @@ const gFrom = computed(() => viewProject.value.gradient.from || '#000')
 const gTo = computed(() => viewProject.value.gradient.to || '#000')
 
 onMounted(() => {
-  for (let category of projects.projects) {
-    const project = category.projects.find(proj => proj.data.id === route.params.id)
+  for (let category of services) {
+    const project = category.projects.find(proj => proj.id === route.params.id)
     if (project) {
-      viewProject.value = project.data
+      viewProject.value = project
       break
     }
   }

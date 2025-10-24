@@ -18,23 +18,19 @@ const advisors = DataAdvisorsComp()
 const lynkCo = DataLynkCoComp()
 const paar = DataPaarComp()
 
-const services: ServiceData[] = [
-  {
-    name: 'Brand Development',
-    projects: [ipal, veasa, goldenDress, selina, joeys, hearsOnFire],
-  },
-  {
-    name: 'Animation',
-    projects: [tigo, forumPeriodistas, fases, advisors],
-  },
-  {
-    name: 'UI/UX & Development',
-    projects: [lynkCo, paar],
-  },
-]
-
 export default function projectsComp() {
-  return {
-    services,
-  }
+  return [
+    {
+      name: 'Brand Development',
+      projects: [ipal, veasa, goldenDress, selina, joeys, hearsOnFire],
+    },
+    {
+      name: 'Animation',
+      projects: [tigo, forumPeriodistas, fases, advisors],
+    },
+    {
+      name: 'UI/UX & Development',
+      projects: [lynkCo, paar],
+    },
+  ] as ServiceData[]
 }
