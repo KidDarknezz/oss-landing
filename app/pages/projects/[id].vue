@@ -19,6 +19,19 @@
     </UContainer>
     <img v-for="banner of viewProject.banners" :src="banner" class="w-full" />
     <UContainer class="py-20">
+      <div class="mb-6 flex flex-row justify-center">
+        <a :href="viewProject.url" target="_blank" v-if="viewProject.url">
+          <div
+            class="manrope-700 inline-block rounded-2xl px-8 py-4 text-center text-white"
+            :style="{
+              background: `linear-gradient(to right, ${gFrom}, ${gTo})`,
+            }"
+          >
+            Open project
+          </div>
+        </a>
+      </div>
+
       <div class="manrope-400 text-center text-black">{{ viewProject.bottomCopy }}</div>
     </UContainer>
   </div>
