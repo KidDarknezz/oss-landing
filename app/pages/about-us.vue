@@ -6,3 +6,22 @@
     <GeneralReadyToWorkWithUs />
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: 'One Spot | About Us',
+  meta: [
+    {
+      name: 'description',
+      content: 'We Are Creative Thinkers. Visual Storytellers. Brand Builders.',
+    },
+    { property: 'og:title', content: 'One Spot | About Us' },
+    {
+      property: 'og:description',
+      content: 'We Are Creative Thinkers. Visual Storytellers. Brand Builders.',
+    },
+    // { property: 'og:image', content: '/images/og-about.jpg' },
+    // { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+})
+</script>
