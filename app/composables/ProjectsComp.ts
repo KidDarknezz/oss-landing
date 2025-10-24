@@ -1,3 +1,5 @@
+import type { ServiceData } from '~/types/ServiceData'
+
 // Brand Development
 const ipal = DataIpalComp()
 const veasa = DataVeasaComp()
@@ -16,7 +18,7 @@ const advisors = DataAdvisorsComp()
 const lynkCo = DataLynkCoComp()
 const paar = DataPaarComp()
 
-const projects = [
+const services: ServiceData[] = [
   {
     name: 'Brand Development',
     projects: [ipal, veasa, goldenDress, selina, joeys, hearsOnFire],
@@ -33,6 +35,6 @@ const projects = [
 
 export default function projectsComp() {
   return {
-    projects,
+    services,
   }
 }

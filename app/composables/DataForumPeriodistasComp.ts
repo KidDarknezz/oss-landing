@@ -1,6 +1,8 @@
+import type { ProjectData } from '~/types/ProjectData'
 import Thumbnail from '@/assets/images/projects_anim_2.png'
 
-const data = {
+export default function forumPeriodistasComp() {
+  return {
   id: 'forum-de-periodistas',
   name: 'Fórum de Periodistas',
   thumbnail: Thumbnail,
@@ -10,10 +12,9 @@ const data = {
   topCopy: '',
   banners: [],
   bottomCopy: '',
-}
-
-export default function forumPeriodistasComp() {
-  return {
-    data,
-  }
+  gradient: {
+    from: '#B1A57D',
+    to: '#D4CAAE',
+  },
+} as ProjectData
 }

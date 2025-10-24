@@ -10,7 +10,7 @@
       <!-- BTNS SELECT -->
       <div class="mb-6 flex flex-wrap justify-center">
         <div
-          v-for="service in projects"
+          v-for="service in services"
           :key="service.name"
           class="mb-4 w-full px-4 text-center sm:w-1/2 md:w-1/3 lg:w-1/4"
         >
@@ -28,13 +28,15 @@
       <UCarousel
         v-slot="{ item }"
         :items="selectedService?.projects"
-        :ui="{ item: 'basis-[31%]' }"
+        :ui="{
+          item: 'basis-[85%] md:basis-[45%] lg:basis-[31%]',
+        }"
         :align="'start'"
       >
         <div
           class="service-tile cursor-pointer"
-          :style="{ backgroundImage: `url(${item.data.thumbnail})` }"
-          @click="navToProject(item.data.id)"
+          :style="{ backgroundImage: `url(${item.thumbnail})` }"
+          @click="navToProject(item.id)"
         />
       </UCarousel>
       <!-- /CAROUSEL -->
@@ -43,13 +45,15 @@
 </template>
 
 <script lang="ts" setup>
-const { projects } = ProjectsComp()
+import type { ProjectData } from '~/types/ProjectData'
+
+const { services } = ProjectsComp()
 const router = useRouter()
 
-const selectedService = ref(projects[0])
+const selectedService = ref(services[0])
 
 const selectService = (service: string) => {
-  selectedService.value = projects.find(serv => serv.name === service)
+  selectedService.value = services.find(serv => serv.name === service)
 }
 
 const navToProject = (id: string) => {

@@ -21,7 +21,14 @@
     <!-- /COPY -->
 
     <!-- /CAROUSEL -->
-    <UCarousel v-slot="{ item }" :items="items" :ui="{ item: 'basis-[31%]' }" :align="'start'">
+    <UCarousel
+      v-slot="{ item }"
+      :items="items"
+      :ui="{
+        item: 'basis-[85%] md:basis-[45%] lg:basis-[31%]',
+      }"
+      :align="'start'"
+    >
       <div class="carousel__item relative w-full cursor-pointer select-none">
         <div class="carousel__content relative h-full w-full">
           <div class="relative h-100 w-full overflow-hidden rounded-lg">
