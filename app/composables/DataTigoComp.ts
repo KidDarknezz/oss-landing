@@ -1,6 +1,7 @@
 import Thumbnail from '@/assets/images/projects_anim_1.png'
 
 const data = {
+  id: 'tigo',
   name: 'Tigo',
   thubnail: Thumbnail,
   hero: '',

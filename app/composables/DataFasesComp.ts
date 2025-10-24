@@ -1,6 +1,7 @@
 import Thumbnail from '@/assets/images/projects_anim_3.png'
 
 const data = {
+  id: 'fases',
   name: 'Fases',
   thubnail: Thumbnail,
   hero: '',
@@ -8,7 +9,7 @@ const data = {
   subtitle: '',
   topCopy: '',
   banners: [],
-  bottomCopy: ''
+  bottomCopy: '',
 }
 
 export default function fasesComp() {
