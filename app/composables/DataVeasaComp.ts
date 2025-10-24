@@ -1,6 +1,7 @@
-import Banner1 from '@/assets/images/project_ipal_banner_1.png'
-import Banner2 from '@/assets/images/project_ipal_banner_2.png'
-import Hero from '@/assets/images/project_ipal_hero.png'
+import Banner1 from '@/assets/images/project_veasa_banner_1.png'
+import Banner2 from '@/assets/images/project_veasa_banner_2.png'
+import Banner3 from '@/assets/images/project_veasa_banner_3.png'
+import Hero from '@/assets/images/project_veasa_hero.png'
 import Thumbnail from '@/assets/images/projects_gd_3.png'
 
 const data = {
@@ -8,15 +9,16 @@ const data = {
   name: 'Veasa',
   thubnail: Thumbnail,
   hero: Hero,
-  title: 'Honoring 20 Years of Making Progress',
-  subtitle:
-    'To mark two decades of commitment and excellence, IPAL trusted One Spot Creative Studio to refresh their visual identity with a modern, strategic touch.<br/>From our very first conversation, we established a clear and efficient communication channel with the client — listening closely, identifying their core needs, and translating them into visual language. The goal was not only to celebrate 20 years, but to position IPAL for the future with a refreshed brand presence.<br/>We designed a special 20th anniversary emblem, reimagined their social media aesthetics, and delivered a comprehensive brand usage guide to ensure consistency across platforms. The result: a unified, elegant, and professional identity that reflects both IPAL’s legacy and its forward-looking spirit.',
-  topCopy: '',
-  banners: [Banner1, Banner2],
-  bottomCopy: '',
+  title: 'Celebrating Legacy with Purposeful Design',
+  subtitle: 'Client: VEASA - 40th Anniversary Branding',
+  topCopy:
+    'VEASA, a leading provider of architectural glass and aluminum carpentry solutions for large-scale construction in Panama, celebrated its 40th anniversary — a milestone marking decades of expertise in the building industry.<br/><br/>To commemorate this moment, I created a special edition logo highlighting their journey since 1985. The visual identity was applied across key touchpoints, including banners, corporate merchandise, and POP materials — all designed to reflect the brand’s strength, precision, and longevity in the construction sector.<br/><br/>A full website redesign is also in development, aiming to modernize VEASA’s digital presence and align it with their position as a trusted partner to top-tier developers.',
+  banners: [Banner1, Banner2, Banner3],
+  bottomCopy:
+    "This branding effort was about honoring VEASA's legacy while reinforcing its role as a key player in Panama's evolving skyline.",
   gradient: {
-    from: '',
-    to: '',
+    from: 'sky-300',
+    to: 'blue-800',
   },
 }
 
