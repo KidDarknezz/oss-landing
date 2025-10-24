@@ -1,15 +1,12 @@
 <template>
   <div class="bg-stone-700 text-white">
     <UContainer class="py-25">
-      <div class="mb-15 flex flex-wrap items-center justify-center">
-        <!-- Title -->
-        <div class="font-manrope text-5xl font-normal">The team</div>
-
-        <!-- Divider (hidden on small screens) -->
-        <div class="mx-12 hidden h-24 border-r border-white sm:block"></div>
-
-        <!-- Text -->
-        <div class="w-full md:w-7/12">
+      <div
+        class="mb-15 grid items-center justify-center gap-8 text-center md:grid-cols-[auto_1px_1fr] md:text-left"
+      >
+        <div class="font-manrope py-4 text-5xl font-normal">The team</div>
+        <div class="mx-auto hidden h-24 border-r border-white md:block"></div>
+        <div class="w-full md:w-auto">
           <div class="font-manrope text-justify text-base font-normal">
             We're a multidisciplinary team of designers, thinkers, and creators who work with
             agility, purpose, and collaboration at the core. Every project is approached in
@@ -18,14 +15,15 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-row gap-20">
-        <div class="flex-1" v-for="member in team" :key="member.name">
-          <img :src="member.img" class="mb-6 h-auto w-full" />
-          <div class="font-manrope mb-2 text-center text-lg font-semibold">
+
+      <div class="grid gap-20 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
+        <div v-for="member in team" :key="member.name" class="text-center">
+          <img :src="member.img" class="mb-6 h-auto w-full rounded-2xl" />
+          <div class="font-manrope mb-2 text-lg font-semibold">
             {{ member.name }}
           </div>
-          <div class="text-center text-lg font-semibold text-black">
-            <span class="pa-2 bg-white" style="padding: 7px 25px">
+          <div class="text-lg font-semibold text-black">
+            <span class="inline-block rounded-xl bg-white px-6 py-2">
               {{ member.role }}
             </span>
           </div>
