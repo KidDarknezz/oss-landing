@@ -5,7 +5,12 @@
       <div class="manrope-700 mb-5 text-center text-4xl text-black">{{ viewProject.title }}</div>
 
       <div class="mb-7 flex flex-row justify-center">
-        <div :class="gradientClasses">
+        <div
+          class="manrope-700 inline-block rounded-2xl px-8 py-4 text-center text-white"
+          :style="{
+            background: `linear-gradient(to right, ${gFrom}, ${gTo})`,
+          }"
+        >
           {{ viewProject.subtitle }}
         </div>
       </div>
@@ -25,10 +30,9 @@ const projects = ProjectsComp()
 
 const viewProject = ref()
 
-const gradientClasses = computed(
-  () =>
-    `inline-block rounded-2xl text-white manrope-700 text-center bg-linear-to-r from-${viewProject.value.gradient.from} to-${viewProject.value.gradient.to} px-8 py-4`
-)
+const gFrom = computed(() => viewProject.value.gradient.from || '#000')
+
+const gTo = computed(() => viewProject.value.gradient.to || '#000')
 
 onMounted(() => {
   for (let category of projects.projects) {

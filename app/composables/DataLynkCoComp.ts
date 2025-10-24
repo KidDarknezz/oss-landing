@@ -3,7 +3,7 @@ import Thumbnail from '@/assets/images/projects_uiux_1.png'
 const data = {
   id: 'lynkco',
   name: 'LynkCo',
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: '',
   title: '',
   subtitle: '',

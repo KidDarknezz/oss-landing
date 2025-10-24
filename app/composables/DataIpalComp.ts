@@ -6,7 +6,7 @@ import Thumbnail from '@/assets/images/projects_gd_1.png'
 const data = {
   id: 'ipal',
   name: 'IPAL',
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: Hero,
   title: 'Honoring 20 Years of Making Progress',
   subtitle: 'Client: IPAL - 20th Anniversary Rebranding',
@@ -16,8 +16,8 @@ const data = {
   bottomCopy:
     "This project was more than a rebrand — it was a celebration of IPAL's journey, values, and vision. We're proud to have been part of this milestone, crafting a brand presence that honors the past and inspires what's next.",
   gradient: {
-    from: 'sky-300',
-    to: 'blue-800',
+    from: '#52B8E8',
+    to: '#004F9E',
   },
 }
 

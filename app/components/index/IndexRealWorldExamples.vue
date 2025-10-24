@@ -33,7 +33,7 @@
       >
         <div
           class="service-tile cursor-pointer"
-          :style="{ backgroundImage: `url(${item.data.thubnail})` }"
+          :style="{ backgroundImage: `url(${item.data.thumbnail})` }"
           @click="navToProject(item.data.id)"
         />
       </UCarousel>

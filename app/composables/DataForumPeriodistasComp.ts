@@ -3,7 +3,7 @@ import Thumbnail from '@/assets/images/projects_anim_2.png'
 const data = {
   id: 'forum-de-periodistas',
   name: 'Fórum de Periodistas',
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: '',
   title: '',
   subtitle: '',

@@ -7,7 +7,7 @@ import Thumbnail from '@/assets/images/projects_gd_3.png'
 const data = {
   id: 'veasa',
   name: 'Veasa',
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: Hero,
   title: 'Celebrating Legacy with Purposeful Design',
   subtitle: 'Client: VEASA - 40th Anniversary Branding',
@@ -17,8 +17,8 @@ const data = {
   bottomCopy:
     "This branding effort was about honoring VEASA's legacy while reinforcing its role as a key player in Panama's evolving skyline.",
   gradient: {
-    from: 'sky-300',
-    to: 'blue-800',
+    from: '#52B8E8',
+    to: '#004F9E',
   },
 }
 

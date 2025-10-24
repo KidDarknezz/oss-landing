@@ -3,13 +3,13 @@ import Thumbnail from '@/assets/images/projects_anim_1.png'
 const data = {
   id: 'tigo',
   name: 'Tigo',
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: '',
   title: '',
   subtitle: '',
   topCopy: '',
   banners: [],
-  bottomCopy: ''
+  bottomCopy: '',
 }
 
 export default function TigoComp() {

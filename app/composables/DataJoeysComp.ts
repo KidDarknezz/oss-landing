@@ -3,7 +3,7 @@ import Thumbnail from '@/assets/images/projects_gd_2.png'
 const data = {
   id: 'joeys',
   name: "Joey's",
-  thubnail: Thumbnail,
+  thumbnail: Thumbnail,
   hero: '',
   title: '',
   subtitle: '',
