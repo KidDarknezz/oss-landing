@@ -34,6 +34,7 @@
         <div
           class="service-tile cursor-pointer"
           :style="{ backgroundImage: `url(${item.data.thubnail})` }"
+          @click="navToProject(item.data.id)"
         />
       </UCarousel>
       <!-- /CAROUSEL -->
@@ -43,11 +44,16 @@
 
 <script lang="ts" setup>
 const { projects } = ProjectsComp()
+const router = useRouter()
 
 const selectedService = ref(projects[0])
 
 const selectService = (service: string) => {
   selectedService.value = projects.find(serv => serv.name === service)
+}
+
+const navToProject = (id: string) => {
+  router.push(`/projects/${id}`)
 }
 
 const isServiceSelected = (service: string) => {
