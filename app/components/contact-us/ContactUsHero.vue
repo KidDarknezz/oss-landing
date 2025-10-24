@@ -1,7 +1,6 @@
 <template>
-  <div class="hero bg-black text-white">
-    <UContainer>
-      <div class="grid grid-cols-12 gap-12"></div>
+  <div class="bg-black text-white">
+    <UContainer class="py-25">
       <div class="grid grid-cols-12 gap-4">
         <!-- First column -->
         <div class="col-span-12 p-4 sm:col-span-6 lg:col-span-5">
@@ -27,6 +26,31 @@
 
         <!-- Second column -->
         <div class="col-span-12 p-4 sm:col-span-6 lg:col-span-7">
+          <div
+            class="manrope-700 mb-4 bg-[linear-gradient(90deg,#70C48F,#5BC3A1,#27C2D0,#00C2F3)] bg-clip-text text-center text-2xl text-transparent"
+          >
+            Choose your vibe
+          </div>
+          <div class="mb-3 grid grid-cols-12 gap-4">
+            <div
+              class="col-span-4 cursor-pointer rounded-lg bg-linear-to-r from-[#70C48F] to-[#00C2F3] p-[2px] text-center"
+              v-for="service in services"
+              :key="service"
+              @click="selectService(service)"
+            >
+              <div class="rounded-lg p-3" :class="isServiceSelected(service) ? '' : 'bg-black'">
+                {{ service }}
+              </div>
+            </div>
+          </div>
+          <div class="text-center text-red-500" v-if="showServiceErr && !formData.service">
+            Please select a vibe
+          </div>
+          <div
+            class="manrope-700 my-10 bg-[linear-gradient(90deg,#70C48F,#5BC3A1,#27C2D0,#00C2F3)] bg-clip-text text-center text-2xl text-transparent"
+          >
+            Add your info & let's make it happen.
+          </div>
           <UForm :schema="schema" :state="formData" class="space-y-4" @submit="onSubmit">
             <UFormField name="fullName">
               <template #label>
@@ -112,6 +136,17 @@ import NotReact from '@/assets/images/not-react.gif'
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
+const services = [
+  'Graphic Design',
+  'UI/UX Design',
+  '2D Animation',
+  '3D',
+  'Web Development',
+  'App Development',
+  'Video Editing',
+  'Video Production',
+]
+
 const schema = v.object({
   fullName: v.pipe(v.string(), v.minLength(2, 'Full name must be at least 2 characters')),
   company: v.pipe(v.string(), v.minLength(2, 'Company must be at least 2 characters')),
@@ -126,23 +161,25 @@ const formData = ref({
   company: '',
   email: '',
   phone: '',
+  service: '',
 })
+const showServiceErr = ref(false)
 
 const toast = useToast()
 
-async function onSubmit(event: FormSubmitEvent<Schema>) {
+const selectService = (service: string) => {
+  formData.value.service = service
+  showServiceErr.value = false
+}
+
+const isServiceSelected = (service: string) => formData.value.service === service
+
+const onSubmit = async (event: FormSubmitEvent<Schema>) => {
+  if (!formData.value.service) {
+    showServiceErr.value = true
+    return
+  }
   toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
   console.log(event.data)
 }
-
-const fullName = ref('')
-const company = ref('')
-const email = ref('')
-const phoneNo = ref('')
 </script>
-
-<style scoped>
-.hero {
-  padding: 15rem 0;
-}
-</style>
