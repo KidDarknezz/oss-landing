@@ -32,7 +32,7 @@
         </a>
       </div>
 
-      <div class="manrope-400 text-center text-black">{{ viewProject.bottomCopy }}</div>
+      <div class="manrope-400 text-center text-black" v-html="viewProject.bottomCopy" />
     </UContainer>
   </div>
 </template>
