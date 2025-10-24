@@ -1,8 +1,10 @@
 <template>
   <NuxtRouteAnnouncer />
-  <GeneralHeader v-if="route.fullPath !== '/'" />
-  <NuxtPage />
-  <GeneralFooter />
+  <UApp>
+    <GeneralHeader v-if="route.fullPath !== '/'" />
+    <NuxtPage />
+    <GeneralFooter />
+  </UApp>
 </template>
 
 <script setup>
