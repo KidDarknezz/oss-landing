@@ -23,8 +23,6 @@ useHead({
       content:
         "Transform your vision into powerful digital experiences — Let's design the future together.",
     },
-    // { property: 'og:image', content: '/images/og-about.jpg' },
-    // { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })
 </script>

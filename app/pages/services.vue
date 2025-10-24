@@ -17,8 +17,6 @@ useHead({
       property: 'og:description',
       content: 'Design Code Content Done Right.',
     },
-    // { property: 'og:image', content: '/images/og-about.jpg' },
-    // { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })
 </script>

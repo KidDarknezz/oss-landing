@@ -20,8 +20,6 @@ useHead({
       property: 'og:description',
       content: 'We Are Creative Thinkers. Visual Storytellers. Brand Builders.',
     },
-    // { property: 'og:image', content: '/images/og-about.jpg' },
-    // { name: 'twitter:card', content: 'summary_large_image' },
   ],
 })
 </script>
