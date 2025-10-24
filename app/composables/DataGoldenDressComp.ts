@@ -2,7 +2,13 @@ import Thumbnail from '@/assets/images/projects_gd_4.png'
 
 const data = {
   name: 'The Golden Dress Studio',
-  thumbial: Thumbnail,
+  thubnail: Thumbnail,
+  hero: '',
+  title: '',
+  subtitle: '',
+  topCopy: '',
+  banners: [],
+  bottomCopy: '',
 }
 
 export default function goldenDressComp() {

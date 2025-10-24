@@ -2,7 +2,13 @@ import Thumbnail from '@/assets/images/projects_gd_3.png'
 
 const data = {
   name: 'Veasa',
-  thumbial: Thumbnail,
+  thubnail: Thumbnail,
+  hero: '',
+  title: '',
+  subtitle: '',
+  topCopy: '',
+  banners: [],
+  bottomCopy: '',
 }
 
 export default function veasaComp() {

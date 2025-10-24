@@ -33,7 +33,7 @@
       >
         <div
           class="service-tile cursor-pointer"
-          :style="{ backgroundImage: `url(${item.data.thumbial})` }"
+          :style="{ backgroundImage: `url(${item.data.thubnail})` }"
         />
       </UCarousel>
       <!-- /CAROUSEL -->

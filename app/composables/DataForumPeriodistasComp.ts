@@ -2,7 +2,13 @@ import Thumbnail from '@/assets/images/projects_anim_2.png'
 
 const data = {
   name: 'Fórum de Periodistas',
-  thumbial: Thumbnail,
+  thubnail: Thumbnail,
+  hero: '',
+  title: '',
+  subtitle: '',
+  topCopy: '',
+  banners: [],
+  bottomCopy: '',
 }
 
 export default function forumPeriodistasComp() {
