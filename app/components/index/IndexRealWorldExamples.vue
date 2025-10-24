@@ -45,8 +45,6 @@
 </template>
 
 <script lang="ts" setup>
-import type { ProjectData } from '~/types/ProjectData'
-
 const services = ProjectsComp()
 const router = useRouter()
 

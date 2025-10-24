@@ -44,16 +44,27 @@ const services = ProjectsComp()
 const viewProject = ref()
 
 const gFrom = computed(() => viewProject.value.gradient.from || '#000')
-
 const gTo = computed(() => viewProject.value.gradient.to || '#000')
 
-onMounted(() => {
-  for (let category of services) {
-    const project = category.projects.find(proj => proj.id === route.params.id)
-    if (project) {
-      viewProject.value = project
-      break
-    }
+for (let category of services) {
+  const project = category.projects.find(proj => proj.id === route.params.id)
+  if (project) {
+    useHead({
+      title: `One Spot | ${project.name}`,
+      meta: [
+        {
+          name: 'description',
+          content: project.subtitle,
+        },
+        { property: 'og:title', content: `One Spot | ${project.name}` },
+        {
+          property: 'og:description',
+          content: project.subtitle,
+        },
+      ],
+    })
+    viewProject.value = project
+    break
   }
-})
+}
 </script>
