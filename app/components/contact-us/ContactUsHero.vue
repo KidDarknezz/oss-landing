@@ -195,7 +195,7 @@ const onSubmit = async () => {
   try {
     loading.value = true
     const sendEmailReq = await fetch(
-      'http://127.0.0.1:5001/onespot-live/us-central1/contactEmail',
+      'https://us-central1-onespot-live.cloudfunctions.net/contactEmail',
       {
         method: 'POST',
         headers: {
