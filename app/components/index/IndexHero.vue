@@ -58,17 +58,7 @@
               {{ link.label }}
             </span>
           </div>
-
-          <!-- Hamburger menu (visible on xs/sm) -->
-          <UButton
-            class="md:hidden"
-            icon="i-lucide-menu"
-            rounded
-            size="md"
-            variant="subtle"
-            color="neutral"
-            @click="toggleDrawer(true)"
-          />
+          <GeneralMenuDrawer />
         </div>
       </UContainer>
     </div>
@@ -83,7 +73,7 @@ import HeroPoster from '@/assets/images/hero-poster.webp'
 import OSStudioLogoWhite from '@/assets/images/os-studio-logo-white.svg'
 
 const router = useRouter()
-const { navLinks, toggleDrawer } = NavDrawerComp()
+const { navLinks } = NavDrawerComp()
 
 const target = ref<HTMLElement | null>(null)
 const isVisible = ref(false)

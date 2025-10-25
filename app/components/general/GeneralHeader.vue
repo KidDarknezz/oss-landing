@@ -17,6 +17,7 @@
             {{ link.label }}
           </span>
         </div>
+        <GeneralMenuDrawer />
       </div>
     </UContainer>
   </div>
@@ -27,7 +28,7 @@ import OSStudioLogoWhite from '@/assets/images/os-studio-logo-white.svg'
 
 const route = useRoute()
 const router = useRouter()
-const { toggleDrawer, navLinks } = NavDrawerComp()
+const { navLinks } = NavDrawerComp()
 
 const gradientText = (path: string) => (route.fullPath === path ? 'studio-gradient-text' : '')
 
