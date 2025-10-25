@@ -120,6 +120,8 @@
               <UButton
                 class="font-manrope cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 px-15 text-base font-bold text-white no-underline"
                 type="submit"
+                :disabled="loading"
+                :loading="loading"
               >
                 <div class="flex w-full flex-row items-center justify-center text-center">
                   <div class="mr-3">Submit form</div>
@@ -137,7 +139,6 @@
 <script lang="ts" setup>
 import NotReact from '@/assets/images/not-react.gif'
 import * as v from 'valibot'
-import type { FormSubmitEvent } from '@nuxt/ui'
 
 const services = [
   'Graphic Design',
@@ -157,8 +158,6 @@ const schema = v.object({
   phone: v.pipe(v.string(), v.minLength(1, 'Phone number is required')),
 })
 
-type Schema = v.InferOutput<typeof schema>
-
 const formData = ref({
   fullName: '',
   company: '',
@@ -167,6 +166,7 @@ const formData = ref({
   service: '',
 })
 const showServiceErr = ref(false)
+const loading = ref(false)
 
 const toast = useToast()
 
@@ -177,12 +177,52 @@ const selectService = (service: string) => {
 
 const isServiceSelected = (service: string) => formData.value.service === service
 
-const onSubmit = async (event: FormSubmitEvent<Schema>) => {
+const cleanForm = () => {
+  formData.value = {
+    fullName: '',
+    company: '',
+    email: '',
+    phone: '',
+    service: '',
+  }
+}
+
+const onSubmit = async () => {
   if (!formData.value.service) {
     showServiceErr.value = true
     return
   }
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
-  console.log(event.data)
+  try {
+    loading.value = true
+    const sendEmailReq = await fetch(
+      'http://127.0.0.1:5001/onespot-live/us-central1/contactEmail',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          template: 'd-a2d3155c689746aea3956f9ff85fb087',
+          email: 'info@onespotlive.com',
+          data: {
+            fullName: formData.value.fullName,
+            company: formData.value.company,
+            email: formData.value.email,
+            service: formData.value.service,
+            phone: formData.value.phone,
+          },
+        }),
+      }
+    )
+    const respData = await sendEmailReq.json()
+    if (respData.response === 'ok') {
+      toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
+      cleanForm()
+    } else throw new Error()
+  } catch {
+    toast.add({ title: 'Error', description: 'An error ocurred.', color: 'error' })
+  } finally {
+    loading.value = false
+  }
 }
 </script>
