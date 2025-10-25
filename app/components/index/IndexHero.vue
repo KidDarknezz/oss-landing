@@ -22,6 +22,7 @@
           size="lg"
           class="text-body mt-6 cursor-pointer bg-linear-to-r from-emerald-500 to-cyan-500 px-8 font-semibold"
           rounded
+          to="/contact-us"
         >
           Start a Project
         </UButton>
