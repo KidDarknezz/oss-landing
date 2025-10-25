@@ -15,16 +15,7 @@
             </div>
 
             <div class="mb-6 flex gap-2">
-              <UButton
-                v-for="social in socials"
-                :key="social.icon"
-                :icon="social.icon"
-                size="sm"
-                rounded
-                class="cursor-pointer p-2"
-                variant="link"
-                color="neutral"
-              />
+              <GeneralSocialLinks />
             </div>
           </div>
 
@@ -81,29 +72,6 @@ const router = useRouter()
 const { navLinks } = NavDrawerComp()
 
 const openPath = (path: string) => router.push(path)
-
-const socials = [
-  {
-    icon: 'i-lucide-facebook',
-    url: '',
-  },
-  {
-    icon: 'i-lucide-twitter',
-    url: '',
-  },
-  {
-    icon: 'i-lucide-instagram',
-    url: '',
-  },
-  {
-    icon: 'i-lucide-linkedin',
-    url: '',
-  },
-  {
-    icon: 'i-lucide-youtube',
-    url: '',
-  },
-]
 
 const contactList = [
   {

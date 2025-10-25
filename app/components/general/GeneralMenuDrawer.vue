@@ -21,6 +21,9 @@
             {{ link.label }}
           </div>
         </div>
+        <div class="flex flex-row justify-end pt-8 pr-4">
+          <GeneralSocialLinks />
+        </div>
       </div>
     </template>
   </USlideover>
