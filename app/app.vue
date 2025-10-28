@@ -2,6 +2,7 @@
   <NuxtRouteAnnouncer />
   <UApp>
     <GeneralHeader v-if="route.fullPath !== '/'" />
+    <div class="h-[58.16px]" v-if="route.fullPath !== '/'" />
     <NuxtPage />
     <GeneralFooter />
   </UApp>
