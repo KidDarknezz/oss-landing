@@ -55,14 +55,9 @@
 <script lang="ts" setup>
 const slides = [
   {
-    text: `“They thoroughly analyze our industry and target audience, allowing them to develop customized campaigns that effectively reach and engage our customers. Their creative ideas and cutting-edge techniques have helped us stay ahead of the competition.”`,
-    name: 'Michael Kaizer',
-    role: 'CEO of Basecamp Corp',
-  },
-  {
-    text: `“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum tortor eu dolor pellentesque ultrices. Nullam vulputate ornare tortor ac venenatis. Fusce lorem tellus, tincidunt sed efficitur eu, tempor non purus.”`,
-    name: 'Pedro Picapiedras',
-    role: 'CTO of Basecamp Corp',
+    text: `“Trabajar con One Spot ha sido una experiencia excelente. Jean y su equipo han sido muy profesionales, correctos y comprometidos desde el primer momento. El resultado final ha sido de altísima calidad y estamos muy complacidos. Sin duda, los recomiendo ampliamente.”`,
+    name: 'José Ignacio Serdio',
+    role: 'CEO - Veasa',
   },
 ]
 

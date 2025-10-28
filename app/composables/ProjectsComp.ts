@@ -17,6 +17,8 @@ const advisors = DataAdvisorsComp()
 // UI/UX & Dev
 const lynkCo = DataLynkCoComp()
 const paar = DataPaarComp()
+const veasaweb = DataVeasawebComp()
+const onespot = DataOneSpotComp()
 
 export default function projectsComp() {
   return [
@@ -30,7 +32,7 @@ export default function projectsComp() {
     },
     {
       name: 'UI/UX & Development',
-      projects: [lynkCo, paar],
+      projects: [onespot, lynkCo, paar, veasaweb],
     },
   ] as ServiceData[]
 }
