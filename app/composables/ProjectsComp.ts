@@ -13,6 +13,8 @@ const tigo = DataTigoComp()
 const forumPeriodistas = DataForumPeriodistasComp()
 const fases = DataFasesComp()
 const advisors = DataAdvisorsComp()
+const mujeresUnicas = DataMujeresUnicasComp()
+const nightOfWonders = DataNightOfWondersComp()
 
 // UI/UX & Dev
 const lynkCo = DataLynkCoComp()
@@ -28,7 +30,7 @@ export default function projectsComp() {
     },
     {
       name: 'Animation',
-      projects: [tigo, forumPeriodistas, fases, advisors],
+      projects: [tigo, forumPeriodistas, fases, advisors, mujeresUnicas, nightOfWonders],
     },
     {
       name: 'UI/UX & Development',
