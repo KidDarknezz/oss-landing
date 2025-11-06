@@ -17,7 +17,18 @@
 
       <div v-html="viewProject.topCopy" class="manrope-400 text-center text-black" />
     </UContainer>
-    <img v-for="banner of viewProject.banners" :src="banner" class="w-full" />
+    <div v-for="banner of viewProject.banners">
+      <img :src="banner" class="w-full" v-if="!isVideo(banner)" />
+      <UContainer v-else>
+        <iframe
+          class="aspect-video"
+          :src="banner"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </UContainer>
+    </div>
     <UContainer class="py-20">
       <div class="mb-6 flex flex-row justify-center">
         <a :href="viewProject.url" target="_blank" v-if="viewProject.url">
@@ -38,13 +49,16 @@
 </template>
 
 <script lang="ts" setup>
+import { type ProjectData } from '~/types/ProjectData'
 const route = useRoute()
 const services = ProjectsComp()
 
-const viewProject = ref()
+const viewProject = ref<ProjectData>()
 
-const gFrom = computed(() => viewProject.value.gradient.from || '#000')
-const gTo = computed(() => viewProject.value.gradient.to || '#000')
+const gFrom = computed(() => viewProject.value?.gradient.from)
+const gTo = computed(() => viewProject.value?.gradient.to)
+
+const isVideo = (value: string) => value.includes('youtube')
 
 for (let category of services) {
   const project = category.projects.find(proj => proj.id === route.params.id)
