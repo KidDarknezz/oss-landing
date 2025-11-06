@@ -17,9 +17,10 @@
 
       <div v-html="viewProject.topCopy" class="manrope-400 text-center text-black" />
     </UContainer>
-    <div v-for="banner of viewProject.banners">
+    <div v-for="(banner, index) of viewProject.banners" :class="index != 0 ? 'pt-25' : ''">
       <img :src="banner" class="w-full" v-if="!isVideo(banner)" />
       <UContainer v-else>
+        {{ index }}
         <iframe
           class="aspect-video"
           :src="banner"
