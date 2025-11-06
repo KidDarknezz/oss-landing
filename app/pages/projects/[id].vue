@@ -20,9 +20,8 @@
     <div v-for="(banner, index) of viewProject.banners" :class="index != 0 ? 'pt-25' : ''">
       <img :src="banner" class="w-full" v-if="!isVideo(banner)" />
       <UContainer v-else>
-        {{ index }}
         <iframe
-          class="aspect-video"
+          class="aspect-video w-full"
           :src="banner"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
