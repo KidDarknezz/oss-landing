@@ -20,7 +20,7 @@
         <UButton
           color="primary"
           size="lg"
-          class="text-body mt-6 cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 px-10 py-4 font-semibold"
+          class="text-body mt-6 cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 px-15 py-3 font-semibold"
           rounded
           to="/contact-us"
         >
