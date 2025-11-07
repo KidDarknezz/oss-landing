@@ -163,7 +163,7 @@ const formData = ref({
   company: '',
   email: '',
   phone: '',
-  service: '',
+  service: [] as string[],
 })
 const showServiceErr = ref(false)
 const loading = ref(false)
@@ -171,11 +171,13 @@ const loading = ref(false)
 const toast = useToast()
 
 const selectService = (service: string) => {
-  formData.value.service = service
+  if (isServiceSelected(service))
+    formData.value.service = formData.value.service.filter(serv => serv !== service)
+  else formData.value.service.push(service)
   showServiceErr.value = false
 }
 
-const isServiceSelected = (service: string) => formData.value.service === service
+const isServiceSelected = (service: string) => formData.value.service.includes(service)
 
 const cleanForm = () => {
   formData.value = {
@@ -183,12 +185,12 @@ const cleanForm = () => {
     company: '',
     email: '',
     phone: '',
-    service: '',
+    service: [],
   }
 }
 
 const onSubmit = async () => {
-  if (!formData.value.service) {
+  if (formData.value.service.length <= 0) {
     showServiceErr.value = true
     return
   }
@@ -203,7 +205,7 @@ const onSubmit = async () => {
         },
         body: JSON.stringify({
           template: 'd-a2d3155c689746aea3956f9ff85fb087',
-          email: 'info@onespotlive.com',
+          email: 'amilland29@gmail.com',
           data: {
             fullName: formData.value.fullName,
             company: formData.value.company,
