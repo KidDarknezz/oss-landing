@@ -63,6 +63,7 @@
       </UContainer>
     </div>
   </div>
+  <GeneralFullScreenLoader v-else />
 </template>
 
 <script lang="ts" setup>
