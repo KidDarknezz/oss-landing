@@ -20,10 +20,10 @@
     </div>
 
     <!-- Images row -->
-    <div class="flex flex-wrap items-center justify-between gap-4">
+    <!-- <div class="flex flex-wrap items-center justify-between gap-4">
       <img :src="ProjectsFinished" class="w-[34%] rounded-lg" />
       <img :src="HowWeWork" class="w-[64%] rounded-lg" />
-    </div>
+    </div> -->
   </UContainer>
 </template>
 
