@@ -29,12 +29,12 @@
         v-slot="{ item }"
         :items="selectedService?.projects"
         :ui="{
-          item: 'basis-[85%] md:basis-[45%] lg:basis-[31%]',
+          item: 'basis-[85%] md:basis-[45%] lg:basis-[28%]',
         }"
         :align="'start'"
       >
         <div
-          class="service-tile cursor-pointer"
+          class="service-tile aspect-square cursor-pointer"
           :style="{ backgroundImage: `url(${item.thumbnail})` }"
           @click="navToProject(item.id)"
         />
@@ -88,7 +88,6 @@ const isServiceSelected = (service: string) => {
   width: 100%;
   border-radius: 20px;
   padding: 10px;
-  height: 375px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
