@@ -118,7 +118,7 @@ onUnmounted(() => {
 <style scoped>
 .hero-video-container {
   position: relative;
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
 }
