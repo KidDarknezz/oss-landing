@@ -205,7 +205,7 @@ const onSubmit = async () => {
         },
         body: JSON.stringify({
           template: 'd-a2d3155c689746aea3956f9ff85fb087',
-          email: 'amilland29@gmail.com',
+          email: 'info@onespotlive.com',
           data: {
             fullName: formData.value.fullName,
             company: formData.value.company,
