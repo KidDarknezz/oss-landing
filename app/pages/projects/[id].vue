@@ -1,6 +1,9 @@
 <template>
   <div v-if="viewProject">
-    <img :src="viewProject.hero" class="w-full" />
+    <div
+      class="h-screen w-full bg-cover bg-center"
+      :style="{ backgroundImage: `url(${viewProject.hero})` }"
+    ></div>
     <UContainer class="py-25">
       <div class="manrope-700 mb-5 text-center text-4xl text-black">{{ viewProject.title }}</div>
 
@@ -17,7 +20,10 @@
 
       <div v-html="viewProject.topCopy" class="manrope-400 text-center text-black" />
     </UContainer>
-    <div v-for="(banner, index) of viewProject.banners" :class="index != 0 ? 'pt-25' : ''">
+    <div
+      v-for="(banner, index) of viewProject.banners"
+      :class="index != 0 && isVideo(banner) ? 'pt-25' : ''"
+    >
       <img :src="banner" class="w-full" v-if="!isVideo(banner)" />
       <UContainer v-else>
         <iframe
