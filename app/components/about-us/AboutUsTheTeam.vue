@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-stone-700 text-white">
+  <div class="bg-[#232323] text-white">
     <UContainer class="py-25">
       <div
         class="mb-15 grid items-center justify-center gap-8 text-center md:grid-cols-[auto_1px_1fr] md:text-left"
