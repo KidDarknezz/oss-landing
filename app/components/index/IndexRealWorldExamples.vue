@@ -25,37 +25,21 @@
       <!-- /BTNS SELECT -->
 
       <!-- /CAROUSEL -->
-      <UCarousel
-        v-slot="{ item }"
-        :items="selectedService?.projects"
-        :ui="{
-          item: 'basis-[85%] md:basis-[45%] lg:basis-[28%]',
-        }"
-        :align="'start'"
-      >
-        <div
-          class="service-tile aspect-square cursor-pointer"
-          :style="{ backgroundImage: `url(${item.thumbnail})` }"
-          @click="navToProject(item.id)"
-        />
-      </UCarousel>
+      <GeneralProjectsCarousel :projects="selectedService!.projects" />
       <!-- /CAROUSEL -->
     </UContainer>
   </div>
 </template>
 
 <script lang="ts" setup>
+import GeneralProjectsCarousel from '../general/GeneralProjectsCarousel.vue'
+
 const services = ProjectsComp()
-const router = useRouter()
 
 const selectedService = ref(services[0])
 
 const selectService = (service: string) => {
   selectedService.value = services.find(serv => serv.name === service)
-}
-
-const navToProject = (id: string) => {
-  router.push(`/projects/${id}`)
 }
 
 const isServiceSelected = (service: string) => {
@@ -82,14 +66,5 @@ const isServiceSelected = (service: string) => {
   border-radius: 20px;
   cursor: pointer;
   color: white;
-}
-
-.service-tile {
-  width: 100%;
-  border-radius: 20px;
-  padding: 10px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 </style>

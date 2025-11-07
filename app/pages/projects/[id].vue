@@ -51,6 +51,14 @@
 
       <div class="manrope-400 text-center text-black" v-html="viewProject.bottomCopy" />
     </UContainer>
+    <div class="bg-stone-100">
+      <UContainer class="py-25">
+        <div class="font-manrope mb-15 text-center text-3xl font-semibold lg:text-4xl">
+          See more: <span class="studio-gradient-text">{{ viewCategory }}</span>
+        </div>
+        <GeneralProjectsCarousel :projects="projectsInCategory || []" />
+      </UContainer>
+    </div>
   </div>
 </template>
 
@@ -60,14 +68,21 @@ const route = useRoute()
 const services = ProjectsComp()
 
 const viewProject = ref<ProjectData>()
+const viewCategory = ref<string>()
 
 const gFrom = computed(() => viewProject.value?.gradient.from)
 const gTo = computed(() => viewProject.value?.gradient.to)
+const projectsInCategory = computed(() =>
+  services
+    .find(serv => serv.name === viewCategory.value)
+    ?.projects.filter(proj => proj.id !== viewProject.value?.id)
+)
 
 const isVideo = (value: string) => value.includes('youtube')
 
 for (let category of services) {
   const project = category.projects.find(proj => proj.id === route.params.id)
+  viewCategory.value = category.name
   if (project) {
     useHead({
       title: `One Spot | ${project.name}`,
