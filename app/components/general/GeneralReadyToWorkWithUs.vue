@@ -8,10 +8,10 @@
       </div>
       <div class="w-full py-2 lg:w-3/12">
         <UButton
-          class="font-manrope w-full cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 text-base font-bold text-white no-underline"
+          class="font-manrope w-full cursor-pointer rounded-full bg-linear-to-r from-emerald-500 to-cyan-500 px-7 py-4 text-base font-bold text-white no-underline"
           to="/contact-us"
         >
-          <div class="flex w-full flex-row items-center justify-center text-center">
+          <div class="flex w-full flex-row items-center justify-between text-center">
             <div class="mr-3">Get Started</div>
             <UIcon name="i-lucide-arrow-right" />
           </div>
