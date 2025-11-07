@@ -1,5 +1,5 @@
 <template>
-  <USlideover v-model:open="drawerOpen">
+  <USlideover v-model:open="drawerOpen" title="&nbsp;" description="&nbsp;">
     <UButton class="md:hidden" size="md" variant="link">
       <UIcon name="i-lucide-menu" class="size-5 text-white" />
     </UButton>
