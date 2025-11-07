@@ -1,9 +1,12 @@
 <template>
-  <div v-if="viewProject">
+  <div v-if="viewProject && screenSize">
+    <img :src="viewProject.heroMobile" v-if="screenSize === 'mobile'" />
     <div
       class="h-screen w-full bg-cover bg-center"
       :style="{ backgroundImage: `url(${viewProject.hero})` }"
-    ></div>
+      v-else
+    />
+
     <UContainer class="py-25">
       <div class="manrope-700 mb-5 text-center text-4xl text-black">{{ viewProject.title }}</div>
 
@@ -21,8 +24,8 @@
       <div v-html="viewProject.topCopy" class="manrope-400 text-center text-black" />
     </UContainer>
     <div
-      v-for="(banner, index) of viewProject.banners"
-      :class="index != 0 && isVideo(banner) ? 'pt-25' : ''"
+      v-for="(banner, index) of responsiveBanners"
+      :class="index != 0 && isVideo(banner) ? 'py-25' : ''"
     >
       <img :src="banner" class="w-full" v-if="!isVideo(banner)" />
       <UContainer v-else>
@@ -69,9 +72,17 @@ const services = ProjectsComp()
 
 const viewProject = ref<ProjectData>()
 const viewCategory = ref<string>()
+const screenWidth = ref(0)
+const screenSize = ref<'mobile' | 'tablet' | 'desktop'>()
 
 const gFrom = computed(() => viewProject.value?.gradient.from)
+
 const gTo = computed(() => viewProject.value?.gradient.to)
+
+const responsiveBanners = computed(() => {
+  if (screenSize.value === 'mobile') return viewProject.value?.bannersMobile
+  return viewProject.value?.banners
+})
 const projectsInCategory = computed(() =>
   services
     .find(serv => serv.name === viewCategory.value)
@@ -79,6 +90,15 @@ const projectsInCategory = computed(() =>
 )
 
 const isVideo = (value: string) => value.includes('youtube')
+
+const updateScreenSize = () => {
+  screenWidth.value = window.innerWidth
+  if (screenWidth.value < 640) screenSize.value = 'mobile'
+  else if (screenWidth.value < 1024) screenSize.value = 'tablet'
+  else screenSize.value = 'desktop'
+}
+
+onMounted(() => updateScreenSize())
 
 for (let category of services) {
   const project = category.projects.find(proj => proj.id === route.params.id)
